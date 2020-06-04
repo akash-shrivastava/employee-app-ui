@@ -43,7 +43,7 @@
             </div>
         
         <div class="panel panel-default holding-bottom-none no-border">
-            <table pagination="true" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%"
+            <table class="table table-striped table-bordered table-sm" cellspacing="0" width="100%"
                 pag>
                 <thead>
                     <tr>
@@ -53,7 +53,7 @@
                             <span *ngIf="!sort.id">&#8595;</span>
                         </th>
                         <th class="th-sm" (click)="sortByName('name');sort.name= !sort.name">
-                            FullName
+                            Full Name
                             <span *ngIf="sort.name">&#8593;</span>
                             <span *ngIf="!sort.name">&#8595;</span>
                         </th>
@@ -165,7 +165,7 @@
                         </div>
                         <div class="col form-group">
                             <label>DOB</label>
-                            <input type="calender" (change)="dob($event, 'C')" class="form-control" placeholder="">
+                            <input type="date"  (change)="dob($event, 'C')" class="form-control" placeholder="">
                         </div> 
                     </div>
                 </form>
@@ -278,7 +278,7 @@
                         </div>
                         <div class="col form-group">
                             <label>DOB</label>
-                            <input type="calender" [value]="displayEmployeeData.dob"  (change)="dob($event, 'U')" class="form-control" placeholder="">
+                            <input type="text" [value]="displayEmployeeData.dob"  (change)="dob($event, 'U')" class="form-control" placeholder="" disabled="true">
                         </div> 
                     </div>
                 </form>

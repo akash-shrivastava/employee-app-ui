@@ -71,7 +71,7 @@ export class EmployeesComponent implements OnInit {
             region: this.employee.region,
             dob: this.employee.dob,
           };
-          this.employeeData.push(tempEmployee);
+            this.employeeData.push(tempEmployee);
           $('.closeModel').click();
       } 
       );
@@ -175,10 +175,10 @@ export class EmployeesComponent implements OnInit {
 
   dob(event,flag){
     if(flag=== "C"){
-      this.employee.dob = event.target.value;
+      this.employee.dob = event.target.value.split("-").reverse().join("/");;
     }
     if(flag=== "U"){
-      this.updatedEmployeeData.dob = event.target.value;
+      this.updatedEmployeeData.dob = event.target.value.split("-").reverse().join("/");;
     }
     
   }
@@ -200,7 +200,8 @@ export class EmployeesComponent implements OnInit {
       if(this.isSelected==="Name"){
         this.employeeData.forEach(emp=>{
           let name = `${emp.firstName} ${emp.lastName}`;
-          if(name === this.searchText){
+          let searchName = name.toLowerCase();
+          if(searchName.includes(this.searchText.toLowerCase())){
             empData.push(emp);
           }
         })
