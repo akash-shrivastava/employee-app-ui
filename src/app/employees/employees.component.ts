@@ -24,6 +24,8 @@ export class EmployeesComponent implements OnInit {
     name: true,
     jobTitle: true,
     email: true,
+    dob: true,
+    region: true,
   }
   isEmployeeID:boolean= false;
   searchText:any;
@@ -233,7 +235,7 @@ export class EmployeesComponent implements OnInit {
     }
   }
 
-  sortByName(sortKey){
+  sortBy(sortKey){
     if(sortKey==="name"){
       this.employeeData.sort((a,b) => {
         if(a.firstName < b.firstName) { return this.sort.name ? 1 : -1; }
@@ -255,10 +257,24 @@ export class EmployeesComponent implements OnInit {
         return 0;
       })
     }
+    if(sortKey==="region"){
+      this.employeeData.sort((a,b) => {
+        if(a.region < b.region)  { return this.sort.region ? 1 : -1; }
+        if(a.region > b.region)  { return this.sort.region ? -1 : 1; }
+        return 0;
+      })
+    }
     if(sortKey==="email"){
       this.employeeData.sort((a,b) => {
         if(a.emailAddress < b.emailAddress)  { return this.sort.email ? 1 : -1; }
         if(a.emailAddress > b.emailAddress)  { return this.sort.email ? -1 : 1; }
+        return 0;
+      })
+    }
+    if(sortKey==="dob"){
+      this.employeeData.sort((a,b) => {
+        if(new Date(a.dob) < new Date(b.dob))  { return this.sort.dob ? 1 : -1; }
+        if(new Date(a.dob) > new Date(b.dob))  { return this.sort.dob ? -1 : 1; }
         return 0;
       })
     }

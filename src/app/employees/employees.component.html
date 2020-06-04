@@ -47,12 +47,12 @@
                 pag>
                 <thead>
                     <tr>
-                        <th class="th-sm" (click)="sortByName('id');sort.id= !sort.id">
+                        <th class="th-sm" (click)="sortBy('id');sort.id= !sort.id">
                             ID
                             <span *ngIf="sort.id">&#8593;</span>
                             <span *ngIf="!sort.id">&#8595;</span>
                         </th>
-                        <th class="th-sm" (click)="sortByName('name');sort.name= !sort.name">
+                        <th class="th-sm" (click)="sortBy('name');sort.name= !sort.name">
                             Full Name
                             <span *ngIf="sort.name">&#8593;</span>
                             <span *ngIf="!sort.name">&#8595;</span>
@@ -60,7 +60,7 @@
                         <th class="th-sm">
                             Employee Code
                         </th>
-                        <th class="th-sm" (click)="sortByName('jobTitle');sort.jobTitle= !sort.jobTitle">
+                        <th class="th-sm" (click)="sortBy('jobTitle');sort.jobTitle= !sort.jobTitle">
                             Job Title
                             <span *ngIf="sort.jobTitle">&#8593;</span>
                             <span *ngIf="!sort.jobTitle">&#8595;</span>
@@ -68,16 +68,20 @@
                         <th class="th-sm">
                             Phone Number
                         </th>
-                        <th class="th-sm" (click)="sortByName('email');sort.email= !sort.email">
+                        <th class="th-sm" (click)="sortBy('email');sort.email= !sort.email">
                             Email Id
                             <span *ngIf="sort.email">&#8593;</span>
                             <span *ngIf="!sort.email">&#8595;</span>
                         </th>
-                        <th class="th-sm">
+                        <th class="th-sm" (click)="sortBy('region');sort.region= !sort.region">
                             Region
+                            <span *ngIf="sort.region">&#8593;</span>
+                            <span *ngIf="!sort.region">&#8595;</span>
                         </th>
-                        <th class="th-sm">
+                        <th class="th-sm" (click)="sortBy('dob');sort.dob= !sort.dob">
                             DOB
+                            <span *ngIf="sort.dob">&#8593;</span>
+                            <span *ngIf="!sort.dob">&#8595;</span>
                         </th>
                         <th class="th-sm">
                             
