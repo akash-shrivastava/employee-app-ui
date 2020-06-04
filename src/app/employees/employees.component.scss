@@ -66,3 +66,9 @@ p:hover {
 .btn-search{
     padding: 0%;
 }
+table th {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: #fff;
+}
